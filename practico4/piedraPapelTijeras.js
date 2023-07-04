@@ -1,9 +1,9 @@
+const PIEDRA="piedra", PAPEL="papel", TIJERA="tijera";
 function obtenerJugadaComputadora()
     {
     const opcion = Math.floor(Math.random() * 3);
-    let lista = ["piedra","papel","tijera"];
-    let  compu=lista[opcion];
-    return compu;
+    let lista = [PIEDRA,PAPEL,TIJERA];
+    return lista[opcion];
     }
 
 let opcionCompu=obtenerJugadaComputadora();
@@ -21,9 +21,9 @@ function determinarGanador(Usuario,Compu)
     {
         let resultado;
         if (Compu===Usuario){ resultado ="Empate";}
-        else if ((Compu==="piedra" && Usuario==="tijera")||(Compu==="tijera" && Usuario==="papel")||(Compu==="papel" && Usuario==="piedra"))
+        else if ((Compu===PIEDRA && Usuario===TIJERA)||(Compu===TIJERA && Usuario===PAPEL)||(Compu===PAPEL && Usuario===PIEDRA))
                 { resultado ="Gana la computadora";}
-        else if ((Compu==="tijera" && Usuario==="piedra")||(Compu==="piedra" && Usuario==="papel")||(Compu==="papel" && Usuario==="tijera"))
+        else if ((Compu===TIJERA && Usuario===PIEDRA)||(Compu===PIEDRA && Usuario===PAPEL)||(Compu===PAPEL && Usuario===TIJERA))
                 { resultado ="Gana el usuario";}
         else { resultado ="Informacion mal ingresada por el usuario";}
         return resultado;
